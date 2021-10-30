@@ -1,4 +1,5 @@
-
+// Java first program 
+//learn how to print in java programming langauage
 
 public class printZ {
 
