@@ -4,6 +4,7 @@
 
 //  	*		*	
 //	    	*
+// Source code in java 
 import java.util.*;
 
 public class pattern10{
