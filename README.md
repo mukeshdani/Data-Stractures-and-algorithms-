@@ -34,6 +34,6 @@ My solutions to coding interview problems on **LeetCode**, **AlgoExpert**, **GFG
 
 
 
-<img align="right" alt="GIF" src="images/giphy.gif" width="500" height="320" />
+<img align="center" alt="GIF" src="images/giphy.gif" width="500" height="320" />
 
 
