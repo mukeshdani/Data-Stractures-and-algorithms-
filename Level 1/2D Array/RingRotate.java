@@ -29,7 +29,7 @@ public class RingRotate  {
 
        //rotation k lia function call kr dia 
 
-       rotateShell(arr , s, r);
+       rotateShell(arr , r, s);
        
        // now time to display the 2d rotated array 
 
