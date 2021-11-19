@@ -1,7 +1,8 @@
 {
     "java.project.sourcePaths": [
+        "Level 1/2D Array",
         "Contests/Hackerrank 1",
         "2D Array",
-        "Level 1/2D Array"
+        "Level 1/Getting Started/Functions and array"
     ]
 }
