@@ -9,7 +9,7 @@ public class StringCompression{
 
 	public static String compression1(String str){
 		// write your code here
-		String str1 = " ";
+		String str1 = "";
 
 		for ( int i = 0 ; i<str.length();i++){
 
@@ -24,7 +24,7 @@ public class StringCompression{
 	public static String compression2(String str){
 		// write your code here
 
-		String str1 =" ";
+		String str1 ="";
         int freq = 0 ; 
 		for ( int i = 0 ; i<str.length();i++){
 
