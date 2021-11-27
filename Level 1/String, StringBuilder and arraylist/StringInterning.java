@@ -6,7 +6,7 @@
 import java.io.*;
 import java.util.*;
 
-public class Main {
+public class StringInterning{
 
 	public static void main(String[] args) {
 		Scanner scn = new Scanner(System.in);
