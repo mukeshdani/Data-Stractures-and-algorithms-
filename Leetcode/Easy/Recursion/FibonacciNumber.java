@@ -1,7 +1,3 @@
-public class FibonacciNumber {
-    
-}
-
 //Fibonacci Number
 class Solution {
     public int fib(int n) {
@@ -9,6 +5,19 @@ class Solution {
         
         return fib(n-2)+fib(n-1);
     }
+}
+
+// without recursion 
+int a = -1; 
+    int b = 1;
+    int c = 0;
+    for(int i = 0; i <= n; i++) {
+        c = a + b; // sum of previous two
+        a = b;
+        b = c;
+    }
+    return c;
+}
 }
 
 /*
