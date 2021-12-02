@@ -1,5 +1,4 @@
 
-
 // String Compression
 
 import java.io.*;
@@ -81,7 +80,6 @@ Two strings representing first compressed string and second compressed string re
 Example
 
 Sample Input
-
 wwwwaaadexxxxxx
 
 Sample Output
