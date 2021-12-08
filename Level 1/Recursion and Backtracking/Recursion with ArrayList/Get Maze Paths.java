@@ -1,4 +1,7 @@
 //Get Maze Paths
+
+
+
 import java.io.*;
 import java.util.*;
 
@@ -24,16 +27,14 @@ int m =scn.nextInt();
     // dc - destination column
     public static ArrayList<String> getMazePaths(int sr, int sc, int dr, int dc) {
     
-if ( sc==dc || sr==dr){//+ve base case 
-     ArrayList<String> base = new ArrayList<>();
-       base.add("");
-     return base ;
-
-    } 
-    if ( sc > dc || sr > dc ){//-ve base case 
-     ArrayList<String> base = new ArrayList<>();
-     return base ;
-    }    
+ if(sr==dr && sc==dc){
+            ArrayList<String> base = new ArrayList<>();
+            base.add("");
+            return base;
+ }else if(sr>dr || sc>dc){
+            ArrayList<String> base = new ArrayList<>();
+            return base;
+        }    
      
     ArrayList<String> res = new ArrayList<>();
 
@@ -41,24 +42,21 @@ if ( sc==dc || sr==dr){//+ve base case
 ArrayList<String> rightp = getMazePaths(sr , sc+1 , dr , dc);
 
 for ( String str: rightp){
-    res.add('h'+str);
+    res.add("h"+str);
 }
 
 
 ArrayList<String> downp = getMazePaths(sr+1, sc , dr , dc);
 for (String str: downp){
-    res.add('v'+str);
+    res.add("v"+str);
 }
 
-return res;
+return res; 
+
+
     }
 
 }
-
-
-
-
-
 
 
 
