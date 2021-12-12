@@ -1,5 +1,11 @@
 
 //Search In Nearly Sorted Array
+// Time ==> O(log(N)*(2K+1))
+
+// Modified Binary search 
+
+
+
 import java.util.*;
 import java.lang.*;
 import java.io.*;

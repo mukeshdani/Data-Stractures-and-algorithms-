@@ -2,6 +2,10 @@
 
 // Step Search 
 
+// Time 
+// WC --> O(N)
+// BC --> O(1) constant
+// AC --> O(rootN)
 
 
 class Complete{
