@@ -1,12 +1,35 @@
 
 //Find Peak Element
 
-
-
-
-
-
-
+class Solution {
+    
+    public int findPeakElement(int[] arr) {
+        int low = 0 , high = arr.length -1;
+        
+        while ( low <= high ){
+            
+            int mid = low + (high - low )/2;
+            
+            //corner casee 
+            Long lval = (mid-1>=0)? arr[mid-1] : Long.MIN_VALUE ;
+            Long rval = (mid+1<arr.length)? arr[mid+1] : Long.MIN_VALUE ;
+            
+            
+            //check conditions
+            if ( arr[mid] >lval && arr[mid] >rval ){
+                return mid ;
+            }else if (arr[mid]>lval){
+                low = mid +1;
+            }else {
+                high = mid-1;
+            }
+            
+        }
+        return -1;
+        
+        
+    }
+}
 
 
 

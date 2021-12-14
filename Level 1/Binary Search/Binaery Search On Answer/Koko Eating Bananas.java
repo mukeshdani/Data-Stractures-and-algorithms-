@@ -4,7 +4,50 @@
 // Brute Foce -->linear Search 
 // Opt. this approach by using Binary Search
 
+
+
 class Solution {
+    
+    // for max of array
+    public int maxarry(int[] arr ){
+        int max =0 ;
+        for(int i = 0 ; i<arr.length ; i++){
+            max = Math.max(max , arr[i]);
+        }
+        return max ;
+    }
+    public boolean isPossible(int[] piles, int speed, int maxHours){
+        int currHours = 0;
+        for(int banana: piles){
+            currHours = currHours + banana/speed;
+            if(banana % speed != 0) currHours++;
+        }
+        
+        if(currHours <= maxHours) return true;
+        return false;
+    }
+    
+    public int minEatingSpeed(int[] piles, int h) {
+        
+        int low = 1 ;
+        int high = maxarry(piles);
+        int ans = high;
+        while ( low <=high ){
+            int mid = low + (high-low )/2;
+            
+            if ( isPossible(piles ,mid ,h ) == true ){
+                ans = mid ;
+                high = mid - 1;
+            }else {
+                low = mid + 1;
+            }
+        }
+        
+        return ans ;
+    }
+}
+
+/*class Solution {
     
     public boolean isPossible(int[] piles, int speed, int maxHours){
         int currHours = 0;
@@ -33,11 +76,7 @@ class Solution {
         return ans;
     }
 }
-
-
-
-
-
+*/
 
 
 
