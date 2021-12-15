@@ -3,30 +3,56 @@
 
 
 
+import java.io.*;
+import java.util.*;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+public class Solution {
+  
+     static int count = 0;
+    public static ArrayList<String> getMazePaths(int sr, int sc, int dr, int dc) {
+        if(sr==dr && sc==dc){
+            // positve base case 
+            count++;
+            ArrayList<String> base = new ArrayList<>();
+            base.add("");
+            return base;
+        }else if(sr>dr || sc>dc){
+            // negative base case
+            ArrayList<String> base = new ArrayList<>();
+            return base;
+        }
+        
+        ArrayList<String> ans = new ArrayList<>();
+        
+        ArrayList<String> rp = getMazePaths(sr, sc+1, dr, dc);
+        for(String s:rp)
+            ans.add("H" + s);
+        ArrayList<String> vp = getMazePaths(sr+1, sc, dr, dc);
+        for(String s:vp)
+            ans.add("V" + s);
+        ArrayList<String> dp = getMazePaths(sr+1, sc+1, dr, dc);
+        for(String s:dp)
+            ans.add("D" + s);
+        return ans;
+    }
+    
+    
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        
+        Scanner sc = new Scanner(System.in);
+        int m = sc.nextInt(), n = sc.nextInt();
+        ArrayList<String> ans = getMazePaths(0, 0, m, n);
+        System.out.println(count);
+        System.out.println(ans);
+         
+        
+        for ( int i = 0 ; i<ans.size() ; i++){
+            System.out.println(ans.get(i));
+        }
+        
+    }
+}
 
 /*Take as input N1 and N2, both numbers. N1 and N2 is the number of rows and
 columns on a rectangular board.
