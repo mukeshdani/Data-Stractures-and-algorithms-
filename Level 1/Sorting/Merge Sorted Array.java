@@ -1,5 +1,111 @@
 //Merge Sorted Array
 
+/* ----------------------------With Extra Space -------------------------- */
+// Merge Sorted array Using Extra space 
+// space -->O(n+m)
+// Time --> O(n+m)
+class Solution {
+  public int[] merge(int[] nums1, int m, int[] nums2, int n) {
+        int i = 0 , j = 0 , k=0;
+        int []arr = new int [m+n];
+        while (i<m && j<n){
+            if ( nums1[i]<=nums2[j]){
+                arr[k]=nums1[i];
+                i++;
+                k++;
+            }else{
+                arr[k]=nums2[j];
+                j++;
+                k++;
+            }
+        }
+        while (i<m){
+            arr[k]=nums1[i];
+            i++;
+            k++;
+        }
+        
+        while ( j<n){
+            arr[k]=nums2[j];
+            j++;
+            k++;
+        }
+     return arr;
+    }
+}
+
+/* ------------------------With Out Extra Space-------------------------------- */
+// Sort By Using Insertion sort
+// Space ---> O(1)
+// Time ----> O( N*M + M^2 )   Compromise in Time
+
+class Solution {
+    
+    public void swap ( int [] nums1 , int a , int b ){
+        int temp = nums1[a];
+        nums1[a]=nums1[b];
+        nums1[b]= temp;
+    }
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+        
+        //Sbse phle sare element nums1 mai paste kr deta hai 
+        for ( int i =m ; i<n+m ;i++){
+            nums1[i]=nums2[i-m];
+        }
+        
+        // Ab Nums1 mai Insertion Sort use krenge 
+        // mai i ko m se start kr rha hu bcz m tk toh array already dorted hogi 
+        // Beacuse In question hame given hai ki dono array sorted hai 
+        for ( int i=m ; i<m+n ;i++ ){
+            for ( int j = i-1 ; j >=0 ; j--){
+                if ( nums1[j] > nums1[j+1] ){
+                    swap(nums1 , j , j+1);
+                }else break;
+            }
+        }
+    }
+}
+
+
+/*  --------------------Using Shell Sort -------------------- */
+// gap bnana pdta hai shell sort mai 
+// Time --> O(N+M)log(N+m)
+//Space ----> O(1)
+
+class Solution {
+    
+    public void swap ( int [] nums1 , int a , int b ){
+        int temp = nums1[a];
+        nums1[a]=nums1[b];
+        nums1[b]= temp;
+    }
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+        
+        //Sbse phle sare element nums1 mai paste kr deta hai 
+        for ( int i =m ; i<n+m ;i++){
+            nums1[i]=nums2[i-m];
+        }
+        
+        // Ab Nums1 mai shell sort use krenge 
+        // with ceill value 
+        for ( double gap = (m+n)/2.0; gap >0 ; gap = gap /2.0){
+              // check 
+            int jstart = (int)Math.ceil(gap);
+            for (int i = 0, j=jstart ; j < m+n ; i++ ,j++){
+                if ( nums1[i] > nums1[j] ){
+                    swap(nums1 , i, j);
+                }
+            }
+            if ( jstart == 1 )break ;
+        }
+        }
+    }
+
+
+
+
+
+
 class Solution {
     
     public void mergeSort(int[] nums, int left, int right){
