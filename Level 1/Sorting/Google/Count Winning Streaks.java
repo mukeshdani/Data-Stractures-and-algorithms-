@@ -5,7 +5,7 @@
 
 /* -------------------------Approachs ------------------------------*/
 // depend on time compl.
-// 1 . Time -->O(N^3)---> Using loop and count 0's and 1's and then check which is greater
+// 1 . Time -->O(N^3)---> Using 3 loop and count 0's and 1's and then check which is greater
 // 2 . Time -->O(N^2)---> Using 2 loop and prefix 
 // 3 . Time -->O(NlogN)---> Inversion Count or prefix
 
