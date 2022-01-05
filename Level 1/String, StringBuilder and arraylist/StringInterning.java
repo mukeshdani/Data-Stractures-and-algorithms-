@@ -3,7 +3,6 @@
 // Imutability 
 
 
-import java.io.*;
 import java.util.*;
 
 public class StringInterning{
@@ -24,8 +23,8 @@ public class StringInterning{
         System.out.println(str3.equals(str5));
         System.out.println(str2.equals(str4));
         System.out.println(str==str2);
-        System.out.println(str.equals(str2));
-
+           System.out.println(str.equals(str2));
+          scn.close();
 	}
 
 }

@@ -2,7 +2,6 @@
 
 //Remove Primes
 
-import java.io.*;
 import java.util.*;
 
 public class RemovePrimes {
@@ -36,6 +35,7 @@ public class RemovePrimes {
 		}
 		solution(al);
 		System.out.println(al);
+        scn.close();
 	}
 
 }

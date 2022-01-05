@@ -61,7 +61,7 @@ Sample Output
 
 // Source Code
 
-import java.io.*;
+
 import java.util.*;
 
 public class  ExitPointOfAMatrix {
@@ -118,7 +118,7 @@ public class  ExitPointOfAMatrix {
 
         System.out.println(prevRow);
         System.out.println(prevCol);
-
+        scn.close();
     }
 
 }

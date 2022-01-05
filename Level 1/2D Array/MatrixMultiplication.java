@@ -77,7 +77,7 @@ Sample Output
 
 //Source Code
 
-import java.io.*;
+
 import java.util.*;
 
 public class MatrixMultiplication {
@@ -86,9 +86,11 @@ public static void main(String[] args) throws Exception {
     // write your code here
 
     Scanner scn = new Scanner (System.in );
+    scn.close();
 
     int n1 = scn.nextInt();
     int m1 = scn.nextInt();
+    
      int [][] arr1 = new int [n1][m1];
     for ( int i = 0 ; i<n1 ; i++){
         for ( int j = 0 ; j<m1 ;j++ ){
@@ -134,8 +136,9 @@ public static void main(String[] args) throws Exception {
         }
         System.out.println();
     }
-
+    
  }
+
 
 }
 
