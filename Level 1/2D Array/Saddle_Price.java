@@ -56,7 +56,7 @@ Sample Output
 
 //Source Code
 
-import java.io.*;
+
 import java.util.*;
 
 public class Saddle_Price{
@@ -111,6 +111,7 @@ public class Saddle_Price{
 // agr koi saddle point nhi aata toh invalid ya fir 0 saddle point hoga 
 
 System.out.println("Invalid input");
+scn.close();
 
 
     }

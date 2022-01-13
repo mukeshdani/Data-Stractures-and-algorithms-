@@ -86,7 +86,7 @@ Sample Output
 
 //Source Code
 
-import java.io.*;
+
 import java.util.*;
 
 public class Spiral_Display {
@@ -156,6 +156,6 @@ public class Spiral_Display {
 
        }
 
-        
+       
     }
 

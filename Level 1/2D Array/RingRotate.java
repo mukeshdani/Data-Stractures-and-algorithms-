@@ -21,6 +21,7 @@ public class RingRotate  {
               arr[i][j]=scn.nextInt();
             }
         }
+        scn.close();
     
     // r represent ki kitna rotate krna hai 
        int r = scn.nextInt();

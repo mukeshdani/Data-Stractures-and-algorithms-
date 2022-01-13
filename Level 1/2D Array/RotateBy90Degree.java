@@ -59,7 +59,7 @@ Sample Output
 
 //Source Code
 
-import java.io.*;
+
 import java.util.*;
 
 public class RotateBy90Degree{
@@ -79,6 +79,8 @@ public class RotateBy90Degree{
         transpose(arr);
         swapColumn(arr);
         display(arr);
+    scn.close();
+
     }
     public static void transpose(int [][] arr){
         for ( int  i=0; i<arr.length ; i++){
@@ -87,7 +89,7 @@ public class RotateBy90Degree{
             }
         }
     }
-
+    
 //transpose 
     public static void swap(int [][] arr , int i , int j ){
         int temp = arr[i][j]; 
@@ -121,6 +123,5 @@ public class RotateBy90Degree{
             System.out.println();
         }
     }
-
 }
 
