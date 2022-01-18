@@ -181,7 +181,12 @@ public class Main {
     }
  
     public void reversePI(){
-      // write your code here
+      if (head == null || head.next == null ){
+        return ;
+      }
+    //if ( size == 0 || size == 1 ){
+   //   return ;
+   // }
         Node prev = null ;
        Node curr = head ;
       
