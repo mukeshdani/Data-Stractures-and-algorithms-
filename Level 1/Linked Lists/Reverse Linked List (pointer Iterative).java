@@ -187,7 +187,7 @@ public class Main {
     //if ( size == 0 || size == 1 ){
    //   return ;
    // }
-        Node prev = null ;
+       Node prev = null ;
        Node curr = head ;
       
       while ( curr != null){

@@ -21,7 +21,7 @@ class Solution {
         int left = 0 , right = arr.length-1;
         int ans = -1 ;
         while ( left <=right ){
-            int mid = left + (right - left);
+            int mid = left + (right - left)/2;
             
             if ( arr[mid]==target){
                 ans = mid ;
@@ -39,7 +39,7 @@ class Solution {
         int left = 0 , right = arr.length-1;
         int ans = -1 ;
         while ( left <=right ){
-            int mid = left + (right - left);
+            int mid = left + (right - left)/2;
             
             if ( arr[mid]==target){
                 ans = mid ;
