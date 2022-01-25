@@ -29,7 +29,7 @@ class Solution {
           }
       }
       second.next = null;
-      first.next = secondHead.next;
+     + first.next = secondHead.next;
         return firstHead.next;
     
     }
