@@ -1,5 +1,6 @@
 //Queue To Stack Adapter - Pop Efficient
 //https://nados.io/question/queue-to-stack-adapter-pop-efficient
+//Using Two queue
 import java.io.*;
 import java.util.*;
 

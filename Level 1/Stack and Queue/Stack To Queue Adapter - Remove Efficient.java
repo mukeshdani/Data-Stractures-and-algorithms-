@@ -1,9 +1,5 @@
-//Stack To Queue Adapter - Add Efficient
-//LeedCode 
-//https://leetcode.com/problems/implement-queue-using-stacks/
-//Nados
-//https://nados.io/question/stack-to-queue-adapter-add-efficient
-//Using two stack
+//Stack To Queue Adapter - Remove Efficient
+//https://nados.io/question/stack-to-queue-adapter-remove-efficient
 
 import java.io.*;
 import java.util.*;
@@ -20,11 +16,16 @@ public class Main {
     }
 
     int size() {
-      return mainS.size();
+     return mainS.size();
     }
 
     void add(int val) {
-      mainS.push(val);
+      
+while(mainS.size() > 0)
+            helperS.push(mainS.pop());
+        mainS.push(val);
+        while(helperS.size() > 0)
+            mainS.push(helperS.pop());
     }
 
     int remove() {
@@ -32,34 +33,18 @@ public class Main {
         System.out.println("Queue underflow");
         return-1;
       }
-      
-      while(mainS.size()>0){  
-         helperS.push( mainS.pop());
-      }
 
-      int val = helperS.pop();
-      while(helperS.size()>0){
-mainS.push(helperS.pop());
-
-      }
-      return val;
+      int val = mainS.pop();
+       return val ;
     }
 
     int peek() {
-       if(mainS.size() == 0 ){
+    if(mainS.size() == 0 ){
         System.out.println("Queue underflow");
         return-1;
       }
-     
-      while(mainS.size()>0){ 
-         helperS.push(mainS.pop());
-      }
 
-      int val = helperS.peek();
-      while(helperS.size()>0){
-        mainS.push(helperS.pop());
-      }
-      return val;
+      return mainS.peek();
     }
   }
 
