@@ -1,5 +1,5 @@
 ////Minimum Number of Swaps to Make the String Balanced
-
+//https://leetcode.com/problems/minimum-number-of-swaps-to-make-the-string-balanced/
 class Solution {
     public int minSwaps(String s) {
         Stack<Character> stk = new Stack<>();
