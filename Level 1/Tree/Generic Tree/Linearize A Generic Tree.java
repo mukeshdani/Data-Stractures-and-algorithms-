@@ -181,3 +181,31 @@ public class Main {
   }
 
 }
+
+
+
+//-------------------------------------------------------------------------------
+
+/* 
+  public static Node linearize(Node node){
+    // write your code here
+    if(node == null) return null; 
+
+    ArrayList<Node> tails = new ArrayList<Node>();
+
+    for( Node child : node.children){
+      tails.add(linearize(child));
+    }
+
+    for( int i = node.children.size()-1 ; i>0 ; i--){
+      Node rightChild = node.children.get(i);
+      Node leftChildTail = tails.get(i-1);
+      leftChildTail.children.add(rightChild);
+      node.children.remove(i);
+    }
+
+    if(tails.size() == 0 )return node ;
+    return tails.get(tails.size() - 1);
+  }
+
+   */
