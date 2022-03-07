@@ -25,6 +25,53 @@ public static void levelOrderLinewise(Node node){
  //-----------------------------------------
 
 
+ // 2nd approach 
+
+/*  public static void levelOrderLinewise(Node node){
+  Queue<Node> mq = new ArrayDeque<>();
+  mq.add(node);
+   mq.add(new Node(-1));
+
+   while(mq.size() != 0 ){
+     Node rnode = mq.remove();
+
+     if(rnode.data != -1){
+       System.out.print(rnode.data + " ");
+     
+
+     for(Node child : rnode.children){
+       mq.add(child);
+     }
+     }else {
+       if(mq.size() != 0 ){
+         mq.add(new Node(-1));
+       System.out.println();
+            }       }
+   }
+}
+ */
+
+
+ // 3rd Approach 
+
+/*  public static void levelOrderLinewise(Node node){
+  // write your code here
+  Queue<Node> q = new ArrayDeque<>();
+  q.add(node);
+  
+  while(q.size() != 0){
+    int size = q.size();
+    while(size-->0){
+      Node rnode = q.remove();
+      System.out.print(rnode.data + " ");
+      for(Node child : rnode.children){
+        q.add(child);
+      }
+    }
+    System.out.println();
+  }
+} */
+
 
  import java.io.*;
 import java.util.*;

@@ -118,17 +118,16 @@ public class Main {
      Queue<Node> q = new ArrayDeque<>();
      q.add(node);
      while(q.size() > 0 ){
-       node = q.remove();
-       System.out.print(node.data + " ");
+      Node node1 = q.remove();
+      System.out.print(node1.data + " ");
 
-       for(Node child : node.children){
-         q.add(child);
-       }
+      for(Node child : node1.children){
+        q.add(child);
      }
 
      System.out.println(".");
   }
-
+  }
   public static void main(String[] args) throws Exception {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     int n = Integer.parseInt(br.readLine());
