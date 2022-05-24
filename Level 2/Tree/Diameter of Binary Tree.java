@@ -4,7 +4,7 @@
 //Approach 1 .
 //TC-> O(N^2)
 //Space ->O(H)
-class Solution {
+/* class Solution {
     public int height(TreeNode root){
         if(root == null) return 0;
         return 1 + Math.max(height(root.left), height(root.right));
@@ -26,3 +26,4 @@ class Solution {
         return diameter(root) - 1;
     }
 }
+ */
