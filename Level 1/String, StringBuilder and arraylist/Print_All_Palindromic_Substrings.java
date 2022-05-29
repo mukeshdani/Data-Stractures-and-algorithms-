@@ -1,4 +1,3 @@
-
 //Print All Palindromic Substrings
 
 //Source Code
