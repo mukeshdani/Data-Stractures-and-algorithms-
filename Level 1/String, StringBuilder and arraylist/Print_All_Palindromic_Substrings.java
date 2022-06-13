@@ -1,7 +1,7 @@
 //Print All Palindromic Substrings
 
 //Source Code
-
+/* 
 
 import java.util.*;
 
@@ -35,7 +35,7 @@ public class Print_All_Palindromic_Substrings {
         sc.close();
     }    
 }
-
+ */
 /*
 
 1. You are given a string. 
