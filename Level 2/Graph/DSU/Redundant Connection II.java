@@ -1,7 +1,7 @@
 //Redundant Connection II
 //https://leetcode.com/problems/redundant-connection-ii/
 
-class Solution {
+/* class Solution {
     public int[] findRedundantDirectedConnection(int[][] edges) {
         int[] parent = new int[edges.length + 1];
         Arrays.fill(parent, -1);
@@ -86,4 +86,4 @@ class Solution {
         }
     }
 
-}
+} */
