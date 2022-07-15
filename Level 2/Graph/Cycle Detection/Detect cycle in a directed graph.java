@@ -27,3 +27,46 @@ class Solution {
         return false;
     }
 }
+
+
+///Using BFS
+
+
+class Solution {
+    // -1 -> unvisited, 0 -> Same Path Visited (Preorder), 1 -> Diff Path (Visited)
+    public boolean BFS( int n , ArrayList<ArrayList<Integer>> adj){
+        int [] incomming = new int[n];
+        
+        for(int src = 0 ; src < adj.size() ; src++){
+            for(Integer nbr : adj.get(src)){
+                incomming[nbr]++;
+            }
+        }
+        
+        Queue<Integer> q = new LinkedList<>();
+        
+        for( int i = 0 ; i< n ; i++){
+            if(incomming[i] == 0){
+                q.add(i);
+            }
+        }
+        
+        int visited = 0 ;
+        
+        while(q.size()>0){
+            int src = q.remove();
+            visited++;
+            for(Integer nbr : adj.get(src)){
+                incomming[nbr]--;
+                if(incomming[nbr] == 0 ){
+                    q.add(nbr);
+                }
+            }
+        }
+            if(visited == n) return false ;
+             return true;
+    }
+    public boolean isCyclic(int V, ArrayList<ArrayList<Integer>> adj) {
+       return BFS(V , adj);
+    }
+}
