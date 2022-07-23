@@ -1,7 +1,7 @@
 //Rotting Oranges
 //https://leetcode.com/problems/rotting-oranges/
 
-class Solution {
+/* class Solution {
     class pair{
         int x ;
         int y ;
@@ -67,4 +67,4 @@ class Solution {
         
         
     }
-}
+} */
