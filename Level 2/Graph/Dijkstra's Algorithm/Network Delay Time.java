@@ -1,7 +1,7 @@
 //Network Delay Time
 //https://leetcode.com/problems/network-delay-time/
 
-class Solution {
+/* class Solution {
     public static class Pair implements Comparable<Pair>{
         int node ;
         int weight;
@@ -43,4 +43,4 @@ class Solution {
         
         return (time == Integer.MAX_VALUE) ? -1 :time;
     }
-}
+} */
