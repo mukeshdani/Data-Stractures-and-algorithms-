@@ -1,6 +1,6 @@
 //All Paths From Source to Target
 
-
+/* 
 class Solution {
     
     public void DFS(int src , int dest , boolean[] vis , int[][] graph ,List<Integer> path, List<List<Integer>>paths){
@@ -29,4 +29,4 @@ class Solution {
         DFS(0 , graph.length - 1 , vis , graph , path , paths);
         return paths;
     }
-}
+} */
