@@ -13,6 +13,8 @@ class Solution {
         
         return dp[src] = Math.min(ans1 , ans2)+cost[src];
     }
+
+    
     public int minCostClimbingStairs(int[] cost) {
         int []dp = new int[cost.length + 1];
         Arrays.fill(dp,-1);
