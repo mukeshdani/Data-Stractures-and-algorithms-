@@ -1,69 +1,66 @@
 //Satisfiability of Equality Equations
 //https://leetcode.com/problems/satisfiability-of-equality-equations/
 
-
+import java.util.*;
 class Solution {
+    public class DSU{
+        int[] parent;
+        int[] rank;
+        DSU(int n){
+            parent = new int[n];
+            Arrays.fill(parent ,-1);
+            rank = new int[n];
+            Arrays.fill(rank ,1);
+        }
+        
+        public void union(int a , int b){
+            int pa = find(a);
+            int pb = find(b);
+            if(pa == pb) return;
+            
+            if(rank[pa] > rank[pb]){
+                parent[pb] = pa;
+                rank[pa] += rank[pb];
+            }else {
+                parent[pa] = pb;
+                 rank[pb] += rank[pa];
+            }
+        }
+        
+        public int find(int a){
+            if(parent[a] == -1)return a;
+            return parent[a] = find(parent[a]);
+        }
+    }
     public boolean equationsPossible(String[] equations) {
-        rank = new int[26];
-        parent = new int[26];
+        DSU sets = new DSU(26);
         
-        for(int i = 0; i < 26; i++){
-            parent[i] = i;
-            rank[i] = 0;
+        for(String eqe :equations){
+            int left = eqe.charAt(0) -'a';
+            int right = eqe.charAt(3) -'a';
+            
+            if(eqe.charAt(1) == '=')
+                sets.union(left , right);
         }
         
-        for(String eqn: equations){
-            if(eqn.charAt(1) == '='){
-                char x = eqn.charAt(0);
-                char y = eqn.charAt(3);
-                
-                if(x != y){
-                    unionHelper(x - 'a', y - 'a');
-                }
-            }
+        for(String eqe :  equations){
+            int left = eqe.charAt(0) - 'a';
+            int right = eqe.charAt(3) - 'a';
+            
+            if(eqe.charAt(1) == '!'&& sets.find(left) == sets.find(right))return false ;
         }
-        
-        for(String eqn: equations){
-            if(eqn.charAt(1) == '!'){
-                char x = eqn.charAt(0);
-                char y = eqn.charAt(3);
-                
-                if(find(x - 'a') == find(y - 'a')){
-                    return false;
-                }
-            }
-        }
-        
         return true;
     }
-    
-    int[] rank;
-    int[] parent;
-    
-    void unionHelper(int x, int y){
-        int X = find(x);
-        int Y = find(y);
-        if(X != Y){
-            union(X, Y);
-        }
-    }
-    
-    void union(int X, int Y){
-        if(rank[X] < rank[Y]){
-            parent[X] = Y;
-        } else if(rank[Y] < rank[X]){
-            parent[Y] = X;
-        } else {
-            parent[X] = Y;
-            rank[Y]++;
-        }
-    }
-    
-    int find(int x){
-        if(parent[x] != x){
-            parent[x] = find(parent[x]);
-        }
-        
-        return parent[x];
-    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
