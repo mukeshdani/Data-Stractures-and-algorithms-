@@ -2,7 +2,7 @@
 //https://leetcode.com/problems/network-delay-time/
 
 import java.util.*;
-class Solution {
+class main {
     public static class Pair implements Comparable<Pair>{
         int node ;
         int weight;
