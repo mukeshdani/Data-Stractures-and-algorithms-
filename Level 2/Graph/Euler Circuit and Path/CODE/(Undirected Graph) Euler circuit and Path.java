@@ -1,3 +1,4 @@
+package CODE;
 //Euler circuit and Path
 //https://practice.geeksforgeeks.org/problems/euler-circuit-and-path/1
 

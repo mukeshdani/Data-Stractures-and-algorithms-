@@ -1,7 +1,9 @@
 //Bridge edge in a graph
 //https://practice.geeksforgeeks.org/problems/bridge-edge-in-graph/1
 
-/* class Solution
+
+import java.util.*;
+ class Solution
 {
     //Function to find if the given edge is a bridge in graph.
     static int isBridge(int V, ArrayList<ArrayList<Integer>> adj,int c,int d)
@@ -46,4 +48,4 @@
             }
         }
     }
-} */
+} 

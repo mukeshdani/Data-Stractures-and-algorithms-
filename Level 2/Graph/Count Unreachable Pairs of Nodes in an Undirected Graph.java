@@ -1,6 +1,7 @@
 //Count Unreachable Pairs of Nodes in an Undirected Graph
 //https://leetcode.com/problems/count-unreachable-pair
 
+import java.util.*;
 class Solution {
     class Graph{
          public ArrayList<Integer>[] adj;
