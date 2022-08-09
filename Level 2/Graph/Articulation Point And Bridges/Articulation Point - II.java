@@ -5,62 +5,69 @@
 
 
 import java.util.*; 
+
 class Solution
 {
-    public int[] articulationPoints(int V, ArrayList<ArrayList<Integer>> adj)
-    {
-        HashSet<Integer> aps = new HashSet<>();
-        boolean[] vis = new boolean[V];
-        int[] dis = new int[V];
-        int[] low = new int[V];
+    
+    public int[] disc;
+    public int[] low;
+    public boolean[] vis;
+    public int time =0 ;
+    public TreeSet<Integer> articulationPoint = new TreeSet<>();
+    
+    public void DFS(int src , int parent , ArrayList<ArrayList<Integer>> adj ,boolean[] vis ){
+         vis[src] = true;
+        disc[src] = low[src] = time ;
+        time++;
         
-        for(int i = 0; i < V; i++){
-            if(!vis[i]){
-                dfs(adj, aps, vis, dis, low, i, -1);
+        int dfsCount = 0;
+        
+        for(Integer nbr : adj.get(src)){
+            if(nbr == parent )continue;
+            
+            if(vis[nbr]){
+                //back edge
+                low[src] = Math.min(low[src] , disc[nbr]);
+            }else {
+                 //unviseted 
+                  dfsCount++;
+                 DFS(nbr , src , adj , vis);
+                 low[src] = Math.min(low[src] , low[nbr]);
+                 
+                 if(parent != -1 && low[nbr] >= disc[src]){
+                     articulationPoint.add(src);
+                 }
+              
             }
         }
+        if(parent == -1 && dfsCount >1){
+            articulationPoint.add(src);
+        }
+    }
+    public int[] articulationPoints(int n, ArrayList<ArrayList<Integer>> adj)
+    {
+        // Code here
+        disc = new int[n];
+        low = new int[n];
+        vis = new boolean[n];
         
-        
-        int[] res = new int[aps.size()];
+        for(int i = 0 ; i<n ; i++){
+            if(!vis[i])
+                DFS(i , -1 , adj , vis);
+        }
+       
+      
+        int[] res = new int[articulationPoint.size()];
         int idx = 0;
-        for(int i: aps){
+        for(int i: articulationPoint){
             res[idx] = i;
             idx++;
         }
         
-        if(aps.size() == 0){
+        if(articulationPoint.size() == 0){
             res = new int[] {-1};
         }
-        
         Arrays.sort(res);
-        
         return res;
     }
-    
-    int time = 0;
-    public void dfs(ArrayList<ArrayList<Integer>> adj, HashSet<Integer> aps, boolean[] vis, int[] dis, int[] low, int u, int p){
-        vis[u] = true;
-        dis[u] = low[u] = ++time;
-        
-        int c = 0;
-        for(int v: adj.get(u)){
-            if(v == p){
-                continue;
-            } else if(vis[v]){
-                low[u] = Math.min(low[u], dis[v]);
-            } else {
-                c++;
-                dfs(adj, aps, vis, dis, low, v, u);
-                low[u] = Math.min(low[u], low[v]);
-                
-                if(p != -1 && low[v] >= dis[u]){
-                    aps.add(u);
-                }
-            }
-        }
-        
-        if(p == -1 && c > 1){
-            aps.add(u);
-        }
-    }
-} 
+}
