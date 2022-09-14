@@ -36,7 +36,7 @@
     }
 }
  */
-
+/* 
 // Items on Level
 import java.io.*;
 import java.util.*;
@@ -71,4 +71,30 @@ public class Main {
     combinations(new int[nboxes], 0, ritems, -1);
   }
 
-}
+} */
+
+//////////////////////////////////////
+
+
+/* class Solution {
+    public void getCC(int start, int n, List<Integer> curr , List<List<Integer>> res , int k){
+        
+        if(curr.size() == k){
+            res.add(new ArrayList(curr));//deepcopy 
+            return;
+        }
+       
+        
+        for(int i = start ; i<=n ; i++){
+            curr.add(i);
+            getCC(i+1 , n , curr , res , k);
+            curr.remove(curr.size() - 1);
+        }
+    }
+    public List<List<Integer>> combine(int n, int k) {
+          
+        List<List<Integer>> res = new ArrayList<>();
+        getCC(1 , n, new ArrayList<>() , res , k);
+        return res;
+    }
+} */
