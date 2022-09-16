@@ -30,7 +30,7 @@ class main {
 
 /* 
 import java.util.*;
-public class Solution {
+public class Solution2 {
    
     public static int ninjaTraining(int n, int points[][]) {
       
