@@ -13,7 +13,6 @@ class Solution {
         for(int i = 1 ; i < n+1 ; i++){
             for(int j = m; j >= 1 ; j--){
                 if(s.charAt(i - 1) == t.charAt(j - 1)) prev[j] = prev[j-1] + prev[j];
-                else prev[j] = prev[j];
            }
         }  
         return prev[m];
