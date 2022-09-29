@@ -1,7 +1,152 @@
 //Longest Increasing Subsequence
 //https://leetcode.com/problems/longest-increasing-subsequence/
+import java.util.*;
+
+//Different 
+//optimial 
+class Solution10 {
+    public int lengthOfLIS(int[] nums) {
+        int n = nums.length ;
+        int [] dp = new int [n];
+        Arrays.fill(dp,1);
+
+        
+        for(int i = 0 ; i<n ; i++){
+            for(int prev = 0 ; prev <= i-1 ;prev++ )
+            if(nums[prev] < nums[i]){
+                dp[i] = Math.max(dp[i] , 1 + dp[prev]);
+            }
+        }
+        
+        int max = -1;
+        for(int i = 0 ; i<n ; i++){
+            max = Math.max(max , dp[i]);
+        }
+        return max;
+    }
+}
 
 
+//Space optimization 
+class Solution8{
+    public int lengthOfLIS(int[] nums) {
+        int n = nums.length ; 
+        int [] next = new int [n + 1]; 
+        int [] curr = new int [n + 1]; 
+        
+        for(int idx = n - 1 ; idx >= 0 ; idx--){
+            for(int prev_idx = idx - 1 ; prev_idx >= -1 ; prev_idx --){
+                int len =0 + next[prev_idx + 1];
+                 if(prev_idx == -1 || nums[prev_idx]<nums[idx]){
+                     len = Math.max(len , 1 + next[idx + 1]);
+                 }
+                  curr[prev_idx + 1] = len;
+            }
+            next = curr;
+        }
+        return next[0];
+    }
+}
+
+
+//Tabulation 
+class Solution {
+    public int lengthOfLIS(int[] nums) {
+        int n = nums.length ; 
+        int [][] dp = new int [n + 1][n + 1]; 
+        
+        for(int idx = n - 1 ; idx >= 0 ; idx--){
+            for(int prev_idx = idx - 1 ; prev_idx >= -1 ; prev_idx --){
+                int len =0 + dp[idx + 1][prev_idx + 1];
+                 if(prev_idx == -1 || nums[prev_idx]<nums[idx]){
+                     len = Math.max(len , 1 + dp[idx + 1][idx + 1]);
+                 }
+                  dp[idx][prev_idx + 1] = len;
+            }
+        }
+        return dp[0][0];
+    }
+}
+
+
+//Memoization Solution 
+//
+
+class Solution6 {
+    public int F(int idx , int prev_idx , int [] arr , int [][] dp){
+        if(idx == arr.length)return 0;
+        int len = 0 ;
+        
+        if(dp[idx][prev_idx + 1] != -1)return dp[idx][prev_idx + 1];
+        //not take 
+        len = Math.max(len , 0 + F(idx + 1 , prev_idx , arr , dp));
+        //Take 
+        if(prev_idx == -1 || arr[prev_idx]<arr[idx]){
+            len = Math.max(len , 1 + F(idx + 1 , idx  ,arr , dp));
+        }
+        return dp[idx][prev_idx + 1] = len;
+    }
+    public int lengthOfLIS(int[] nums) {
+        int [][] dp = new int [nums.length][nums.length + 1]; 
+        for(int i = 0 ; i<dp.length ; i++){
+            for(int j = 0 ; j<dp[0].length ; j++){
+                dp[i][j] = -1;
+            }
+        }
+        return F(0 , -1 ,nums , dp);
+    }
+}
+
+//Recursion 
+//TLE Solutions
+
+class Solution5{
+    public int F(int idx , int prev_idx , int [] arr){
+        if(idx == arr.length)return 0;
+        int len = 0 ;
+        //not take 
+        len = Math.max(len , 0 + F(idx + 1 , prev_idx , arr));
+        //Take 
+        if(prev_idx == -1 || arr[prev_idx]<arr[idx]){
+            len = Math.max(len , 1 + F(idx + 1 , idx  ,arr));
+        }
+        
+        return len;
+    }
+    public int lengthOfLIS(int[] nums) {
+        return F(0 , -1 ,nums);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
 class Solution {
     public int memo(int curr , int prev , int [] nums , int [][]dp){
         
@@ -28,7 +173,7 @@ class Solution {
 
 }
 
-
+ */
 /* 
 
 

@@ -1,10 +1,11 @@
+
 //Paint House
 //https://pepcoding.com/resources/online-java-foundation/dynamic-programming-and-greedy/paint-house-official/ojquestion
 
-import java.io.*;
+
 import java.util.*;
 
-public class Main {
+class Main {
 
     public static void main(String[] args) throws Exception {
          Scanner scn = new Scanner(System.in);

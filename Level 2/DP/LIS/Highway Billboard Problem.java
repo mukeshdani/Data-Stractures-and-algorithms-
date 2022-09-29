@@ -6,7 +6,7 @@
 
 
 import java.util.*;
-public class Main{
+class Main{
     public static int solution(int m , int[] x, int[] rev, int t) {
      int [] dp = new int[x.length];
      dp[0] = rev[0];

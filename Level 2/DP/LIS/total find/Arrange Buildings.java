@@ -2,13 +2,9 @@
 //https://pepcoding.com/resources/online-java-foundation/dynamic-programming-and-greedy/arrange-buildings-official/ojquestion
 
 
-import java.io.*;
 import java.util.*;
-
-public class main{
-
-
-public static void main(String[] args) throws Exception {
+class main{
+public static void main(String[] args){
     // write your code here
     Scanner scn = new Scanner(System.in);
     int n = scn.nextInt();

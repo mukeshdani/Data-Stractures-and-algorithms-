@@ -1,11 +1,9 @@
 //Paint Fence
 //https://www.pepcoding.com/resources/online-java-foundation/dynamic-programming-and-greedy/paint-fence-official/ojquestion
 
-
-import java.io.*;
 import java.util.*;
 
-public class Main {
+ class Main {
 
     public static void main(String[] args) throws Exception {
     Scanner scn = new Scanner(System.in);
