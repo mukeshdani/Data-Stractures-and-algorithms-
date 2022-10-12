@@ -26,3 +26,27 @@ class Solution {
         return F(0 , arr.length , arr , k , dp);
     }
 }
+
+
+//Tabulation 
+class Solution2{
+   
+    public int maxSumAfterPartitioning(int[] arr, int k) {
+        int [] dp = new int [arr.length + 1];
+        dp[arr.length]=0;
+        for(int idx = arr.length -1 ; idx >=0 ; idx--){
+             int maxAns = Integer.MIN_VALUE;
+                int len = 0 ;
+                int maxi = Integer.MIN_VALUE;
+
+                for(int i = idx ; i < Math.min(arr.length , idx + k) ; i++){
+                    len++;
+                    maxi = Math.max(maxi , arr[i]);
+                    int sum = len * maxi + dp[i+1];
+                    maxAns = Math.max(maxAns , sum);
+                }
+                 dp[idx] = maxAns;
+        }
+        return dp[0];
+    }
+}
