@@ -1,7 +1,7 @@
 //Split Array Largest Sum
 
 
-public class Solution 
+ class Solution 
 {
         public static int splitArray(int[]arr, int m) {   
         int max = 0;

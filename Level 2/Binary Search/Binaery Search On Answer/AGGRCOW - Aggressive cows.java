@@ -2,7 +2,7 @@
 
 import java.util.*;
 
-public class AggressiveCows {
+class solution {
 
     public static boolean isPossible(int d, int[] stalls, int c, int n){
         int placed = 1, placedAt = stalls[0];
