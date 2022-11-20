@@ -2,7 +2,7 @@
 //https://leetcode.com/problems/magnetic-force-between-two-balls/
 //Similar Aggrcow
 
-
+import java.util.*;
 class Solution {
     public boolean isPossible(int [] position  , int minDistance , int m ){
         int placedCow  = 1 , lastCow  = 0 ;
