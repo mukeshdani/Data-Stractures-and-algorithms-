@@ -20,8 +20,8 @@ class Complete{
             if(arr[idx] == target)return idx;
             
             int requiredJump = Math.abs(arr[idx]  - target);
-            int minJump  = requiredJump /  jump;//floor
-            if(requiredJump % jump !=0)minJump++;//ceil
+            int minJump  = requiredJump /  jump;// floor division
+            if(requiredJump % jump !=0)minJump++;//ceil division
             
             idx = idx + minJump;
         }
