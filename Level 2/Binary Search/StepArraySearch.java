@@ -8,8 +8,7 @@
 
 
 class Complete{
-    
-   
+
     // Function for finding maximum and value pair
     public static int search (int arr[], int n, int target, int jump) {
         //Complete the function
@@ -26,7 +25,5 @@ class Complete{
             idx = idx + minJump;
         }
           return -1;
-    }
-  
-    
+    } 
 }
