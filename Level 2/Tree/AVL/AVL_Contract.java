@@ -3,7 +3,7 @@
 import java.io.*;
 import java.util.*;
 
-public class Main {
+ class Main {
     public static class Node {
         int data;
         Node left;

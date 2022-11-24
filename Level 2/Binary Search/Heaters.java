@@ -22,7 +22,7 @@ class Solution {
         return ans;
     }
     
-    public static int closest(int[] arr, int target){
+    public int closest(int[] arr, int target){
         int lb = lowerBound(arr, target);
         
         if(lb == arr.length) return arr[arr.length - 1]; // ceil does not exist

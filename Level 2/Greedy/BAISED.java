@@ -3,7 +3,7 @@
 /*     ------------------------------------ */
 import java.util.*;
 
-public class BiasedStandings {
+class BiasedStandings {
 
     public static void solve(){
         Scanner sc = new Scanner(System.in);
