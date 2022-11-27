@@ -1,7 +1,7 @@
 // /Common Divisors
 //https://practice.geeksforgeeks.org/problems/common-divisors4712/1
 
-
+package Prime;
 
 class Solution {
     static long gcd(long a , long b){

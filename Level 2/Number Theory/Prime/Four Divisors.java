@@ -1,6 +1,6 @@
 //Four Divisors
 ///https://leetcode.com/problems/four-divisors/
-
+package Prime;
 class Solution {
     public int getFactor(int n){
         int count = 0 , sum =0 ;

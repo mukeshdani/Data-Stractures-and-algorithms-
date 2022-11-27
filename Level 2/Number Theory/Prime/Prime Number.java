@@ -1,7 +1,7 @@
 //Prime Number
 //https://practice.geeksforgeeks.org/problems/prime-number2314/1
+package Prime;
 
-import java.util.*;;
 class Solution{
     static int isPrime(int N){
         // code here

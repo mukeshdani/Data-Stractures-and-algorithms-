@@ -1,7 +1,7 @@
 //Three Divisors
 //https://leetcode.com/problems/three-divisors/
 
-
+package Prime;
 class Solution {
     public boolean isPerfect(int n ){
         int sqrt = (int)Math.sqrt(n);

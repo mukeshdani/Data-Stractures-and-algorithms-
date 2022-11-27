@@ -1,7 +1,7 @@
 //The kth Factor of n
 //https://leetcode.com/problems/the-kth-factor-of-n/
 //
-
+package Prime;
 
 import java.util.*;
 class Solution {
