@@ -2,8 +2,6 @@
 //https://leetcode.com/problems/design-a-stack-with-increment-operation/
 
 class CustomStack {
-
-    
     int [] arr;
     int [] inc ;
     int top = -1;
@@ -11,7 +9,6 @@ class CustomStack {
         arr = new int[maxSize];
         inc = new int[maxSize];
     }
-    
     public void push(int x) {
        if (top == arr.length-1){
            return ;
@@ -20,7 +17,6 @@ class CustomStack {
         
         arr[top] = x;
     }
-    
     public int pop() {
         if ( top == -1 ){
             return -1 ;
