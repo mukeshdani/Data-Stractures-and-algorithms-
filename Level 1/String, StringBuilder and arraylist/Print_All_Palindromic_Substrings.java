@@ -1,10 +1,7 @@
 //Print All Palindromic Substrings
 
-//Source Code
-/* 
 
 import java.util.*;
-
 public class Print_All_Palindromic_Substrings {
 
     public static boolean isPalin(String s){
@@ -35,7 +32,6 @@ public class Print_All_Palindromic_Substrings {
         sc.close();
     }    
 }
- */
 /*
 
 1. You are given a string. 

@@ -1,7 +1,9 @@
 //Row and Col Sorted 
 // https://practice.geeksforgeeks.org/problems/count-zeros-in-a-sorted-matrix/1
 
+
 // Time = O(N) : Stepcase Search, Space = O(1)
+
 
 class GfG {
     int countZeros(int mat[][], int N) {
@@ -15,7 +17,6 @@ class GfG {
                 col--; // no zero in current column: discard column
             }
         }
-
         return zeros;
     }
 }
