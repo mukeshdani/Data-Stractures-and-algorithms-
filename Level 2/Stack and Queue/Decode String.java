@@ -3,6 +3,7 @@
 
 class Solution {
     int idx=0;
+    
 public String decodeString(String s) {
  StringBuffer result = new StringBuffer(); 
  while(idx<s.length() && s.charAt(idx)!=']')
@@ -28,5 +29,6 @@ public String decodeString(String s) {
      }           
  }
  return result.toString();
+
 }
 }
