@@ -12,20 +12,17 @@ class MyCircularDeque {
        
        front = rear = size = 0 ;
    }
-   
    public boolean insertFront(int value) {
        if (isFull()){
            return false ;
            // Deque  overflow 
        }
-       
        if ( size == 0) front = rear = 0 ;
        else front = (front-1 + arr.length )%arr.length ;
        
        arr[front] = value ;
        size ++ ;
        return true ;
-       
        
    }
    
