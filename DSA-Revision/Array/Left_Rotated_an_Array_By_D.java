@@ -46,6 +46,7 @@ public class Left_Rotated_an_Array_By_D {
         d=d%arr.length;
         //bruitForce(arr, d);
         optimalApproach(arr, d);
+        
         for(int i = 0 ; i<arr.length; i++){
             System.out.print(arr[i] + " ");
         }
